@@ -1,0 +1,130 @@
+-- Consider this the equivalent of "myShapes" on the other slots. You start out with a basic shape
+myEntities model =  
+    let
+        useTexture = getTexture model.textureLoader.textures
+    in
+        [ -- Making an ellipsoid requires you to specify the length, width, and height. You also need to pass in the model.
+        
+        ]
+
+-- move / edit the light
+light =
+    pointLight
+        { position = Point3d.centimeters 0 0 100    -- position of the light
+        , chromaticity = Light.sunlight             -- the colour of the light (see https://package.elm-lang.org/packages/ianmackenzie/elm-3d-scene/latest/Scene3d-Light#Chromaticity)
+        , intensity = LuminousFlux.lumens 10000     -- how intense the light is
+        }
+showLight = True -- whether to show the light ball or not
+
+-- Use "loadTexture [name] [url]" to load in texture images from the Internet!
+-- Give each one a unique name.
+-- You can list many of them!
+myTextures = 
+    [ loadTexture "mercury" ""
+    ,
+      loadTexture "venus" ""
+    ,  
+      loadTexture "earth" ""
+    ,
+      loadTexture "mars" ""
+    ,
+      loadTexture "jupiter" ""
+    ,
+      loadTexture "saturn" ""
+    ,
+      loadTexture "uranus" ""
+    ,
+      loadTexture "neptune" ""
+    ]
+
+-- Usage: `svgTexture "name" "name`, where shape is any 2D shape or group
+-- Give each one a unique name.
+-- You can list many of them!
+svgTextures =
+    [ svgTexture "squares" squares
+    ]
+
+-- SVG textures are 50 by 50
+squares =
+    group
+    [
+        square 25 |> filled purple |> move (12.5,12.5)
+    ,   square 25 |> filled orange |> move (-12.5,12.5)
+    ,   square 25 |> filled purple |> move (-12.5,-12.5)
+    ,   square 25 |> filled orange |> move (12.5,-12.5)
+    ]
+
+-- Put your 2D shapes here, and they will be overlayed on top of the screen!
+overlay : Model -> List (Shape Msg)
+overlay model =
+    [
+        angleDisplay model
+    ]
+
+-- This colour is used to create the floor. If you want custom colours, use Color.hsl or Color.rgb!
+floorColour = Color.green
+
+-- Floor size, in metres. Set to 0 to disable.
+floorSize = 0
+
+-- Here you can specify what images to use to create the skybox. Just replace "todo" with a link to an image. (Keep the quotes, though!)
+skyboxType =
+    -- Skybox.URLSkybox textureBottom textureTop textureSide1 textureSide2 textureSide3 textureSide4
+    -- Some other options (comment in the one above and comment one of these out)
+    -- Skybox.GSVGSkybox False skyboxTop skyboxSides skyBoxBottom
+    -- Skybox.GSVGSphericalSkybox False skyboxTop
+    Skybox.URLSphericalSkybox "https://cschank.github.io/img/milky.jpg"
+
+-- this is 50 by 50
+skyboxTop : Shape msg
+skyboxTop =
+    group
+        [
+            square 50 |> filled lightBlue
+        ,   circle 10 |> filled yellow
+        ]
+
+-- this is 200 by 50
+skyboxSides : Shape msg
+skyboxSides =
+    group
+        [
+            rect 200 50 |> filled lightBlue |> move (0,25)
+        ,   rect 200 50 |> filled green |> move(0,-25)
+        ,   triangle 10 |> filled darkGreen |> rotate (degrees -30) |> move (0,5)
+        ,   text "abcdefghijklmnopqrstuvwxyz" |> centered |> size 16 |> filled red
+        ]
+
+-- this is 50 by 50
+skyBoxBottom : Shape msg
+skyBoxBottom =
+    group
+        [
+        ]
+
+
+textureBottom : String
+textureBottom =
+    "todo"
+
+textureTop : String
+textureTop =
+    "todo"
+
+textureSide1 : String
+textureSide1 =
+    "todo"
+
+textureSide2 : String
+textureSide2 =
+    "todo"
+
+textureSide3 : String
+textureSide3 =
+    "todo"
+
+textureSide4 : String
+textureSide4 =
+    "todo"
+
+
