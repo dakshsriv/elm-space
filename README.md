@@ -6,5 +6,8 @@ You can head over to their website to check out their solar system resources suc
 
 This also uses an image from p0 on https://pikist.com as the background.
 
+This also uses an image from MaxwellFury from https://pixabay
 This game is for my summer camp course.
 It is coded in the Elm language on the website https://macoutreach.rocks. 
+
+Also a shoutout to the teachers in macoutreach.
