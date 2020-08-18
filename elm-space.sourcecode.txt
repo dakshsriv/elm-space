@@ -20,21 +20,21 @@ showLight = True -- whether to show the light ball or not
 -- Give each one a unique name.
 -- You can list many of them!
 myTextures = 
-    [ loadTexture "mercury" ""
+    [ loadTexture "mercury" "https://raw.githubusercontent.com/dakshsriv/elm-space/master/mercury.jpg"
     ,
-      loadTexture "venus" ""
+      loadTexture "venus" "https://raw.githubusercontent.com/dakshsriv/elm-space/master/venus.jpg"
     ,  
-      loadTexture "earth" ""
+      loadTexture "earth" "https://raw.githubusercontent.com/dakshsriv/elm-space/master/Webp.net-resizeimage%20(1).jpg"
     ,
-      loadTexture "mars" ""
+      loadTexture "mars" "https://raw.githubusercontent.com/dakshsriv/elm-space/master/mars.jpg"
     ,
-      loadTexture "jupiter" ""
+      loadTexture "jupiter" "https://raw.githubusercontent.com/dakshsriv/elm-space/master/jupiter.jpg"
     ,
-      loadTexture "saturn" ""
+      loadTexture "saturn" "https://raw.githubusercontent.com/dakshsriv/elm-space/master/saturn.jpg"
     ,
-      loadTexture "uranus" ""
+      loadTexture "uranus" "https://raw.githubusercontent.com/dakshsriv/elm-space/master/uranus.jpg"
     ,
-      loadTexture "neptune" ""
+      loadTexture "neptune" "https://raw.githubusercontent.com/dakshsriv/elm-space/master/neptune.jpg"
     ]
 
 -- Usage: `svgTexture "name" "name`, where shape is any 2D shape or group
