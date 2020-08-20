@@ -2,10 +2,10 @@
 myEntities model =  
     let
         useTexture = getTexture model.textureLoader.textures
-        planetsr = [("mercury", 10, 90, 0.03, 1.2),("venus", 23, 210, 0.01, 0.7),("earth", 25, 340, 0.1, 0.4),("mars", 14, 500, 0.1, 0.2),("jupiter", 300, 1000, 0.25, 0.1),("saturn", 250, 1750, 0.24, 0.06),("uranus", 100, 2300, 0.15, 0.03),("neptune", 99, 2800, 0.16, 0.01)]
+        
     in
         [ -- Making an ellipsoid requires you to specify the length, width, and height. You also need to pass in the model.
-        
+        planetsr = [("mercury", 10, 90, 0.03, 1.2),("venus", 23, 210, 0.01, 0.7),("earth", 25, 340, 0.1, 0.4),("mars", 14, 500, 0.1, 0.2),("jupiter", 300, 1000, 0.25, 0.1),("saturn", 250, 1750, 0.24, 0.06),("uranus", 100, 2300, 0.15, 0.03),("neptune", 99, 2800, 0.16, 0.01)]
         List.map(\(textureName, size, distance, dayL, yearL) -> sphere 30 ) planetsr
         ]
 
